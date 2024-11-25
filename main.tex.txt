@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stackrel}
+\usepackage{latexsym}
+\usepackage{microtype}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+
+
+\title{Abgabe 1 für Computergestützte Methoden}
+\author{ Gruppe 89, Niklas Vogelsmeier, Jan Wernicke, Peer Rolfsen }
+\date{2. Dezember 2024}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+
+\tableofcontents
+
+\newpage
+
+\section{Der zentrale Grenzwertsatz}
+Der zentrale Grenzwertsatz (ZGS) ist ein fundamentales Resultat der Wahrscheinlichkeitstheorie, das die Verteilung vo Summen unabhängiger, identisch verteilter ($i.i.d.$) Zufallsvariablen (ZV) beschreibt. Er besagt, dass unter bestimmten Vorraussetzungen die Summe einer großen Anzahl solcher ZV annähernd normalverteilt ist, da die Normalverteilung gut untersucht und mathematisch handhabbar ist
+
+\subsection{Aussage}
+Sei $X_1, X_2, ...X_n$ eine Folge von $i.i.d.$ ZV mit dem Erwartungswert $\mu= \mathbb{E}(X_i)$ und der Varianz $\sigma^2$ = Var$(X_i)$, wobei $ 0 < \sigma^2 < \infty$ gelte. Dann konvergiert die standardisierte Summe $Z_n$ dieser ZV für $n \to \infty$ in Verteilung gegen eine Standardnormalverteilung:\footnote[1]{Der zetrale Grenzwertsatz hat verschiedene Verallgemeinerungen. Eine davon ist der \textbf{Lindberg-Feller-Zentrale Grenzwertsatz}[S.328\cite{Klenke}], der schwächere Bedingungen an die Unabhängigkeit und die identische Verteilung der ZV stellt.}
+
+\begin{equation}
+\label{eq:Z}
+    Z_n=\frac{\sum_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\stackrel{d}{\to} \mathcal{N}(0,1).  
+\end{equation}
+Das bedeutet, dass für große $n$ die Summe der ZV näherungsweise normalverteilt ist mit dem Erwartungswert $n\mu$ und Varianz $n\sigma^2$:
+\begin{equation}
+\label{eq:sum}
+    \sum_{i=1}^nX_i \thicksim N(n\mu,n\sigma^2).
+\end{equation}
+
+
+\subsection{Erklärung der Standardisierung}
+Um die Summe der ZV in eine Standardnormalverteilung zu transformieren, subtrahiert man den Erwartungswert $n\mu$ und teilt durch die Standardabweichung $\sigma\sqrt{n}$. Dies führt zu der obigen Formel \eqref{eq:Z}. Die Darstellung \eqref{eq:sum} ist für $n\to\infty$ nicht wohldefiniert.
+
+\subsection{Anwendungen}
+Der ZGS wird in vielen Bereichen der Statistik und der Wahrscheinlichkeitstheorie angewendet. Typische Beispiele sind:
+\begin{itemize}
+    \item Das Glückspiel im Casino, da die Summe der Augenzahl beim würfeln mit zwei Würfeln bei vielen Versuchen annähernd normalverteilt ist
+    \item Die Körpergröße von Frauen in Deutschland, die ebenfalls annähernd normalvertelt ist
+\end{itemize}
+
+
+\newpage
+
+\section{Bearbeitung zur Aufgabe 2}
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{References}
+
+\end{document}
